@@ -1,8 +1,7 @@
-# form_validation_sample
+# What is it?
 
-A new Flutter project.
+Sample project for validating forms in Flutter.
 
-## Getting Started
+[Read the blogpost here](https://flutter.rocks/2017/10/17/validating-forms-in-flutter/).
 
-For help getting started with Flutter, view our online
-[documentation](http://flutter.io/).
+All the related source code is located in [the /lib folder](https://github.com/FlutterRocks/form-validation-sample/tree/master/lib); no separate Android / iOS code needed.
