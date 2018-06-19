@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
   @override
-  _LoginPageState createState() => new _LoginPageState();
+  _LoginPageState createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final scaffoldKey = new GlobalKey<ScaffoldState>();
-  final formKey = new GlobalKey<FormState>();
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+  final formKey = GlobalKey<FormState>();
 
   String _email;
   String _password;
@@ -26,8 +26,8 @@ class _LoginPageState extends State<LoginPage> {
 
   void _performLogin() {
     // This is just a demo, so no actual login here.
-    final snackbar = new SnackBar(
-      content: new Text('Email: $_email, password: $_password'),
+    final snackbar = SnackBar(
+      content: Text('Email: $_email, password: $_password'),
     );
 
     scaffoldKey.currentState.showSnackBar(snackbar);
@@ -35,33 +35,33 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
+    return Scaffold(
       key: scaffoldKey,
-      appBar: new AppBar(
-        title: new Text('Validating forms'),
+      appBar: AppBar(
+        title: Text('Validating forms'),
       ),
-      body: new Padding(
+      body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: new Form(
+        child: Form(
           key: formKey,
-          child: new Column(
+          child: Column(
             children: [
-              new TextFormField(
-                decoration: new InputDecoration(labelText: 'Your email'),
+              TextFormField(
+                decoration: InputDecoration(labelText: 'Your email'),
                 validator: (val) =>
-                !val.contains('@') ? 'Not a valid email.' : null,
+                    !val.contains('@') ? 'Not a valid email.' : null,
                 onSaved: (val) => _email = val,
               ),
-              new TextFormField(
-                decoration: new InputDecoration(labelText: 'Your password'),
+              TextFormField(
+                decoration: InputDecoration(labelText: 'Your password'),
                 validator: (val) =>
-                val.length < 6 ? 'Password too short.' : null,
+                    val.length < 6 ? 'Password too short.' : null,
                 onSaved: (val) => _password = val,
                 obscureText: true,
               ),
-              new RaisedButton(
+              RaisedButton(
                 onPressed: _submit,
-                child: new Text('Login'),
+                child: Text('Login'),
               ),
             ],
           ),
